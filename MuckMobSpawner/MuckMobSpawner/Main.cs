@@ -29,7 +29,7 @@ namespace MuckMobSpawner
 
             OnlineVersion = GetOnlineVersion();
             if (OnlineVersion != null)
-                if (OnlineVersion.Build > new Version(VERSION).Build)
+                if (OnlineVersion.CompareTo(new Version(VERSION)) > 0)
                 {
                     $"New version available : {OnlineVersion}".Log(Util.LogType.Warning);
                     VersionInvalid = true;
