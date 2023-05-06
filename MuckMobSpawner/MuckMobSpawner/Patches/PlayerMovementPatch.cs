@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using MuckMobLoader.Util;
 using MuckMobSpawner.Util;
+using Steamworks;
 using UnityEngine;
 
 namespace MuckMobLoader.Patches
@@ -12,9 +13,19 @@ namespace MuckMobLoader.Patches
         private static void Hook()
         {
             "Hook execute".Log(MuckMobSpawner.Util.LogType.Bold);
-            Transform Menu = GameObject.Instantiate(AssetLoader.GetAsset("Menu") as GameObject).transform;
-            Menu.parent = GameObject.Find("UI (1)").transform;
-            new Core.MenuController(Menu);
+
+            bool IsConnected = SteamClient.IsValid;
+            bool IsMaster = IsConnected ? SteamManager.Instance.currentLobby.IsOwnedBy(SteamClient.SteamId) : false;
+
+            if (IsMaster || !IsConnected)
+                MakeController();
+
+            void MakeController()
+            {
+                Transform Menu = GameObject.Instantiate(AssetLoader.GetAsset("Menu") as GameObject).transform;
+                Menu.parent = GameObject.Find("UI (1)").transform;
+                new Core.MenuController(Menu);
+            }
         }
     }
 }

@@ -21,7 +21,7 @@ namespace MuckMobLoader.Behaviours
 
         private void OnClick()
         {
-            MobSpawner.Instance.ServerSpawnNewMob(MobSpawner.Instance.allMobs.Length, MobIndex, PlayerMovement.Instance.transform.position, 1, 1);
+            MobSpawner.Instance.ServerSpawnNewMob(-1, MobIndex, PlayerMovement.Instance.transform.position, 1, 1);
         }
     }
 }

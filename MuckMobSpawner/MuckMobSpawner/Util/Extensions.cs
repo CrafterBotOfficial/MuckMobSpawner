@@ -7,6 +7,7 @@ namespace MuckMobSpawner.Util
         public static ManualLogSource _logSource;
         internal static void Log(this object obj, LogType logType = LogType.Info)
         {
+#if DEBUG
             string NewMessage = $" **[{Main.NAME}]** " + obj;
 
             switch (logType)
@@ -24,6 +25,7 @@ namespace MuckMobSpawner.Util
                     _logSource.LogMessage(NewMessage);
                     break;
             }
+#endif
         }
     }
 
