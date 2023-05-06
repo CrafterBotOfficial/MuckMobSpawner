@@ -1,23 +1,27 @@
-﻿using MuckMobSpawner;
-using UnityEngine;
+﻿using BepInEx.Logging;
 
 namespace MuckMobSpawner.Util
 {
     internal static class Extensions
     {
+        public static ManualLogSource _logSource;
         internal static void Log(this object obj, LogType logType = LogType.Info)
         {
-            string NewMessage = $"**[{Main.NAME}]** " + obj;
+            string NewMessage = $" **[{Main.NAME}]** " + obj;
+
             switch (logType)
             {
                 case LogType.Info:
-                    Debug.Log(NewMessage);
+                    _logSource.LogInfo(NewMessage);
                     break;
                 case LogType.Warning:
-                    Debug.Log(NewMessage);
+                    _logSource.LogWarning(NewMessage);
                     break;
                 case LogType.Error:
-                    Debug.Log(NewMessage);
+                    _logSource.LogError(NewMessage);
+                    break;
+                case LogType.Bold:
+                    _logSource.LogMessage(NewMessage);
                     break;
             }
         }
@@ -27,6 +31,7 @@ namespace MuckMobSpawner.Util
     {
         Info,
         Warning,
-        Error
+        Error,
+        Bold
     }
 }
