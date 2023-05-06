@@ -43,7 +43,8 @@ namespace MuckMobSpawner
                 using (HttpClient httpClient = new HttpClient())
                 {
                     byte[] bytes = httpClient.GetByteArrayAsync(GIT_VERSION).Result;
-                    string RawVersion = Convert.ToBase64String(bytes);
+                    string RawVersion = System.Text.Encoding.Default.GetString(bytes);
+                    RawVersion.Log();
                     return new Version(RawVersion);
                 }
             }
