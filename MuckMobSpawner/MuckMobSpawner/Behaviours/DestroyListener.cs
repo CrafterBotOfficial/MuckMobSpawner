@@ -8,6 +8,7 @@ namespace MuckMobLoader.Behaviours
         private void OnDestroy()
         {
             MenuController.menuController = null;
+            SpawnMobButton.SpawnedMobs = 0;
         }
     }
 }

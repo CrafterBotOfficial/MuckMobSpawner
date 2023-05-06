@@ -9,6 +9,8 @@ namespace MuckMobLoader.Behaviours
         public int MobIndex;
         private TextMeshProUGUI textMesh;
 
+        internal static int SpawnedMobs;
+
         private void Start()
         {
             textMesh = GetComponentInChildren<TextMeshProUGUI>();
@@ -21,7 +23,8 @@ namespace MuckMobLoader.Behaviours
 
         private void OnClick()
         {
-            MobSpawner.Instance.ServerSpawnNewMob(-1, MobIndex, PlayerMovement.Instance.transform.position, 1, 1);
+            SpawnedMobs++;
+            MobSpawner.Instance.ServerSpawnNewMob(MobSpawner.Instance.allMobs.Length + SpawnedMobs, MobIndex, PlayerMovement.Instance.transform.position, 1, 1);
         }
     }
 }
