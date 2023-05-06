@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MuckMobSpawner")]
+[assembly: AssemblyTitle("MuckMobLoader")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP")]
-[assembly: AssemblyProduct("MuckMobSpawner")]
+[assembly: AssemblyProduct("MuckMobLoader")]
 [assembly: AssemblyCopyright("Copyright © HP 2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("539b4a52-af1d-45bb-96d9-a3067807924a")]
+[assembly: Guid("65a216d2-0e42-4d7e-8d17-4e6f7a38c82d")]
 
 // Version information for an assembly consists of the following four values:
 //
