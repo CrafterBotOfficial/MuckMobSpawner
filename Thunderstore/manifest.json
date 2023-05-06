@@ -1,0 +1,8 @@
+{
+    "name": "MuckMobSpawner",
+    "version_number": "1.0.0",
+    "website_url": "https://github.com/CrafterBotOfficial/MuckMobSpawner",
+    "description": "(HOST+) Adds a menu to the game that allows you to spawn any mob in the game.",
+    "dependencies": [
+    ]
+}
